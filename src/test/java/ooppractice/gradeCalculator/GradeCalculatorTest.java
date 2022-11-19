@@ -24,9 +24,6 @@ public class GradeCalculatorTest {
     @Test
     @DisplayName("평균 학점을 계산한다.")
     void calculateGradeTest() {
-        // given
-        // when
-        // then
         final List<Cource> cources = List.of(new Cource("객체지향 프로그래밍", 3, "A+"),
                 new Cource("자료구조", 3, "A+"),
                 new Cource("중국어회화", 3, "A+"));
