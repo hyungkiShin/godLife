@@ -5,6 +5,7 @@ import ooppractice.calculator.part2.AdditionOperator;
 import ooppractice.calculator.part2.DivisionOperator;
 import ooppractice.calculator.part2.MultipleOperator;
 import ooppractice.calculator.part2.NewArithmeticOperator;
+import ooppractice.calculator.part2.PositiveNumber;
 import ooppractice.calculator.part2.SubtractionOperator;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class Calculator {
             new MultipleOperator(),
             new DivisionOperator()
     );
-    public static int calculate(int operand1, String operator, int operand2) {
+    public static int calculate(PositiveNumber operand1, String operator, PositiveNumber operand2) {
         // as-is
         // return doCalculate(operand1, operator, operand2);
 
