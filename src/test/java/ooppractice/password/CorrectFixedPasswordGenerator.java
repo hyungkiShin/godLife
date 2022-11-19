@@ -1,4 +1,6 @@
-package ooppractice;
+package ooppractice.password;
+
+import ooppractice.password.PasswordGenerator;
 
 public class CorrectFixedPasswordGenerator implements PasswordGenerator {
 

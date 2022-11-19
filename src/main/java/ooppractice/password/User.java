@@ -1,6 +1,7 @@
-package ooppractice;
+package ooppractice.password;
 
 import lombok.Getter;
+import ooppractice.password.PasswordGenerator;
 
 @Getter
 public class User {

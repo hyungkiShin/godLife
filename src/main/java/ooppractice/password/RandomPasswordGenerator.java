@@ -1,4 +1,4 @@
-package ooppractice;
+package ooppractice.password;
 
 import org.passay.CharacterData;
 import org.passay.CharacterRule;

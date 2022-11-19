@@ -1,5 +1,6 @@
-package ooppractice;
+package ooppractice.password;
 
+import ooppractice.password.PasswordValidator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

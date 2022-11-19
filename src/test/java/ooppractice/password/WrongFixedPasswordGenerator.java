@@ -1,4 +1,4 @@
-package ooppractice;
+package ooppractice.password;
 
 public class WrongFixedPasswordGenerator implements PasswordGenerator {
 
