@@ -1,6 +1,5 @@
 package ooppractice.calculator;
 
-import ooppractice.calculator.part1.ArthmeticOperator;
 import ooppractice.calculator.part2.AdditionOperator;
 import ooppractice.calculator.part2.DivisionOperator;
 import ooppractice.calculator.part2.MultipleOperator;
