@@ -1,25 +1,17 @@
 package database;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import static database.ConnectionManager.getConnection;
+
 public class UserDao {
 
-    private Connection getConnection() {
-        String url = "jdbc:h2:mem:localhost/~/jdbc-practice;MODE=MySQL;DB_CLOSE_DELAY=1";
-        String id = "sa";
-        String password = "";
 
-        try {
-            Class.forName("org.h2.Driver");
-            return DriverManager.getConnection(url, id, password);
-        } catch (Exception e) {
-            return null;
-        }
-    }
 
     public void create(User user) throws SQLException {
         Connection con = null;
@@ -52,7 +44,7 @@ public class UserDao {
         ResultSet resultSet = null;
 
         try {
-            con = getConnection();
+            con = ConnectionManager.getConnection();
             String sql = "SELECT userId, password, name, email FROM USERS WHERE userId = ?";
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, userId);
