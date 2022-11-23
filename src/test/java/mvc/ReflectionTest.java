@@ -8,7 +8,9 @@ import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.lang.annotation.Annotation;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -21,14 +23,19 @@ public class ReflectionTest {
     @Test
     void controllerScan() {
 
+        Set<Class<?>> beans = getTypesAnnotatedWith(List.of(Controller.class, Service.class));
+        logger.debug("beans: {}", beans);
+    }
+
+    private Set<Class<?>> getTypesAnnotatedWith(List<Class <? extends Annotation>> annotations) {
         // java.mvc 패키지 하위에 있는 클래스를 찾는다.
         Reflections reflections = new Reflections("mvc");
 
         Set<Class<?>> beans = new HashSet<>();
 
         // @Controller 에노테이션이 설정돼 있는 모든 클래스를 찾아 hashSet 에 저장한다.
-        beans.addAll(reflections.getTypesAnnotatedWith(Controller.class));
-        beans.addAll(reflections.getTypesAnnotatedWith(Service.class));
-        logger.debug("beans: {}", beans);
+        annotations.forEach(annotation -> beans.addAll(reflections.getTypesAnnotatedWith(annotation)));
+
+        return beans;
     }
 }
